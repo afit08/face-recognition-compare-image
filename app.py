@@ -10,7 +10,7 @@ SIMILARITY_THRESHOLD = 0.6
 
 @app.route('/recognize', methods=['POST'])
 def recognize_attendance():
-    data = request.get_json()
+    data = request.form
     
     # Decode base64 images
     image1_base64 = data['image1']
