@@ -31,4 +31,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Run FastAPI app with Gunicorn using Uvicorn workers
-CMD ["gunicorn", "app:app", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8100", "--workers", "4", "--timeout", "60"]
+CMD ["gunicorn", "app:app", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8100", "--workers", "4", "--threads", "4", "--timeout", "60", "--preload"]
